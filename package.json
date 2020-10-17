@@ -1,0 +1,47 @@
+{
+  "name": "ai-applications-design",
+  "private": true,
+  "version": "0.0.1",
+  "license": "Apache 2.0",
+  "scripts": {
+    "build": "gatsby build",
+    "build:clean": "yarn clean && gatsby build",
+    "build:analyze": "ANALYZE=true yarn build",
+    "build:prefix": "gatsby build --prefix-paths",
+    "clean": "gatsby clean",
+    "dev": "echo 'This command has been deprecated, please use `yarn develop` instead.'",
+    "develop": "gatsby develop -H 0.0.0.0",
+    "develop:clean": "yarn clean && yarn develop",
+    "dev-docker": "echo 'This command has been deprecated, please use `yarn develop` instead.'",
+    "dev:clean": "echo 'This command has been deprecated, please use `yarn develop:clean` instead.'",
+    "format": "prettier --write \"**/*.{scss,css,js,md,mdx}\"",
+    "format:diff": "prettier --check \"**/*.{scss,css,js,md,mdx}\"",
+    "serve": "gatsby serve",
+    "serve-docker": "echo 'This command has been deprecated, please use `yarn serve -H 0.0.0.0` instead.'",
+    "serve:prefix": "gatsby serve --prefix-paths",
+    "start": "echo 'This command has been deprecated, please use `yarn develop` instead.'",
+    "start-docker": "echo 'This command has been deprecated, please use `yarn develop` instead.'",
+    "test": "yarn format:diff",
+    "test:prefix": "yarn build:prefix && yarn serve:prefix"
+  },
+  "dependencies": {
+    "gatsby": "^2.24.68",
+    "gatsby-theme-carbon": "^1.26.12",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "react-helmet": "^6.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
